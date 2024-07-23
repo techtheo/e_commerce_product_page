@@ -28,7 +28,6 @@
   .attribution a {
     color: hsl(228, 45%, 44%);
     font-weight: 500;
-    fo
   }
 </style>
 
@@ -40,6 +39,7 @@
         <div class="col">
           <div class="header-content">
             <div class="logo-and-nav">
+              <!-- event handler to call a js function for the visibillity of navbar when clicked  -->
               <div id="menu-icon" class="d-block d-md-none" onclick="toggleMenu()">
                 <img src="images/icon-menu.svg" alt="Menu icon">
               </div>
@@ -69,7 +69,8 @@
               </nav>
             </div>
             <div class="basket-and-user">
-              <img id="header-basket" src="images/icon-cart.svg" alt="Logo" onclick="togglecart()">
+              <!-- event handler that calls the togglecart() JavaScript function when the image is clicked. This function is presumably used to show or hide the cart. -->
+              <img id="header-basket" src="images/icon-cart.svg" alt="Logo" onclick="togglecart()"> 
               <span id="notification"></span>
               <div class="choppingcart" id="cart">
                 <div class="chc-title">
@@ -167,10 +168,11 @@
               <span id="error-message"></span>
             </div>
             <div class="add-to-cart">
+              <!--  event handler that calls the addToCart() JavaScript function when the button is clicked. -->
               <button id="addtocart-btn" onclick="addToCart()">
                 <img id="basket" src="images/icon-cart.svg" alt="Logo">
                 <span class="to">Add to cart</span>
-              </button>
+              </button> 
             </div>
             <!--counter end-->
           </section>

@@ -13,7 +13,7 @@ const decrementBtn = document.getElementById('decrement-btn');
 // Selects the element with ID 'decrement-btn' and stores it in the decrementBtn variable.
 
 const errorMessage = document.getElementById('error-message'); 
-// Selects the element with ID 'error-message' and stores it in the errorMessage variable.
+// Selects the element with ID 'error-message' and stores it in the errorMessage variable. 
 
 incrementBtn.addEventListener('click', function() {
   counter++; 
@@ -154,14 +154,14 @@ function addToCart() {
     // Remove the dollar sign
     var itemPriceValue = ((itemPrice.textContent).substring(1));
     // Calculate the new price based on the multiplication (quantity*price)
-    var totalprice = parseFloat(itemPriceValue) * parseFloat(quantity.textContent);
+    var totalprice = parseFloat(itemPriceValue) * parseFloat(quantity.textContent);  // parseFloat converts a string arguement to a floating point number
     // Ensure total price has two decimal places and ends with ".00"
-    var formattedTotalPrice = totalprice.toFixed(2);
-    subtotal = parseFloat(formattedTotalPrice) + parseFloat(subtotal);
-    totals.push(formattedTotalPrice);
-    totaldiv.style.display = "block";
-    totaldiv.innerHTML = `<strong> SUBTOTAL : $${subtotal}</strong>`;
-
+    var formattedTotalPrice = totalprice.toFixed(2); // This method formats the number totalprice to a string with exactly two decimal places.
+    subtotal = parseFloat(formattedTotalPrice) + parseFloat(subtotal);  // Assigns the result of the addition back to the subtotal variable, updating its value.
+    totals.push(formattedTotalPrice); // Adds the formattedTotalPrice string to the end of the totals array. This could be used to keep a record of all individual total prices.
+    totaldiv.style.display = "block"; // Sets the display style property of the totaldiv element to block, making it visible. This is typically done if the element was previously hidden.
+    totaldiv.innerHTML = `<strong> SUBTOTAL : $${subtotal}</strong>`; //  Updates the HTML content of the totaldiv element and Sets the content to display the subtotal value, formatted within a string. The ${subtotal} syntax is a template literal that inserts the value of subtotal into the string.
+ 
     // Create a new paragraph element
     var newparagraph = document.createElement("p");
     // Create a new delete icon element
@@ -179,7 +179,7 @@ function addToCart() {
     var activeImageElement = getActiveCarouselItem();
     // Set the inner HTML of the paragraph with the values of the items
     newparagraph.innerHTML = `<img src="${activeImageElement.src}" alt="Active Item Image" width="50" 
-    height="50"  style="float: left; margin-right: 10px;  border-radius: 5px;"> ${itemName.textContent} <br>
+    height="50"  style="float: left; margin-right: 10px;  border-radius: 5px;"> ${itemName.textContent} <br> 
     <span style="margin-right: 3px;">${itemPrice.textContent}</span> <span style="margin-right: 3px;">x</span>
     <span style="margin-right: 3px;">${quantity.textContent}</span> <strong style="color: black;">$${formattedTotalPrice}</strong>`;
     newicon.innerHTML = `<img src="images/icon-delete.svg" onclick="removeItem('${newitem.id}')" style="cursor: pointer;">`;
